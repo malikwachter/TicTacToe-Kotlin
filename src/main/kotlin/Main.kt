@@ -67,15 +67,13 @@ fun multiplayer() {
                 2 -> playerOneField3 = Point(playerFieldTemp)
                 3 -> playerOneField4 = Point(playerFieldTemp)
                 4 -> playerOneField5 = Point(playerFieldTemp)
-                else -> {
-                    println("ERR: To many moves.")
-                }
             }
             playerOneCounter++
         } else
             println("ERR: Input was NULL")
 
         gameField(gameField1, gameField2, gameField3, gameField4, gameField5, gameField6, gameField7, gameField8, gameField9, playerOneField1, playerOneField2, playerOneField3, playerOneField4, playerOneField5, playerTwoField1, playerTwoField2, playerTwoField3, playerTwoField4)
+
         println("Player 2! Choose your field: ")
         playerInput = readlnOrNull()
 
@@ -97,7 +95,8 @@ fun multiplayer() {
                 2 -> playerTwoField3 = Point(playerFieldTemp)
                 3 -> playerTwoField4 = Point(playerFieldTemp)
                 else -> {
-                    println("ERR: To many moves.")
+                    println("The game is over!")
+                    again = false
                 }
             }
             playerTwoCounter++
