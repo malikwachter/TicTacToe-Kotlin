@@ -3,7 +3,7 @@ import java.awt.Point
 fun main() {
 
     println("Welcome to TicTacToe\nGamemode:\n  1) Singleplayer\n  2) Multiplayer\n")
-    var menuInput = readLine()
+    val menuInput = readlnOrNull()
 
     if(menuInput != null) {
         if (menuInput.toInt() == 1)
@@ -20,9 +20,13 @@ fun singleplayer() {
 }
 
 fun multiplayer() {
-    var again = true;
+    var again = true
     var playerOneCounter = 0
     var playerTwoCounter = 0
+    var playerOneInput: String?
+    var playerOneInput1: String?
+    var playerTwoInput: String?
+    var playerTwoInput1: String?
     var playerOneField1 = Point(-1,-1)
     var playerOneField2 = Point(-1,-1)
     var playerOneField3 = Point(-1,-1)
@@ -37,16 +41,16 @@ fun multiplayer() {
     while(again){
         gameField(playerOneField1, playerOneField2, playerOneField3, playerOneField4, playerOneField5, playerTwoField1, playerTwoField2, playerTwoField3, playerTwoField4, playerTwoField5)
         println("Player 1: Choose your field:\nx: ")
-        var playerOneInput = readLine()
+        playerOneInput = readlnOrNull()
         println("y: ")
-        var playerOneInput2 = readLine()
-        if(playerOneInput != null && playerOneInput2 != null) {
+        playerOneInput1 = readlnOrNull()
+        if(playerOneInput != null && playerOneInput1 != null) {
             when(playerOneCounter){
-                0 -> playerOneField1 = Point(playerOneInput.toInt(),playerOneInput2.toInt())
-                1 -> playerOneField2 = Point(playerOneInput.toInt(),playerOneInput2.toInt())
-                2 -> playerOneField3 = Point(playerOneInput.toInt(),playerOneInput2.toInt())
-                3 -> playerOneField4 = Point(playerOneInput.toInt(),playerOneInput2.toInt())
-                4 -> playerOneField5 = Point(playerOneInput.toInt(),playerOneInput2.toInt())
+                0 -> playerOneField1 = Point(playerOneInput.toInt(),playerOneInput1.toInt())
+                1 -> playerOneField2 = Point(playerOneInput.toInt(),playerOneInput1.toInt())
+                2 -> playerOneField3 = Point(playerOneInput.toInt(),playerOneInput1.toInt())
+                3 -> playerOneField4 = Point(playerOneInput.toInt(),playerOneInput1.toInt())
+                4 -> playerOneField5 = Point(playerOneInput.toInt(),playerOneInput1.toInt())
                 else -> {
                     print("ERR: To many moves.")
                 }
@@ -57,16 +61,16 @@ fun multiplayer() {
 
         gameField(playerOneField1, playerOneField2, playerOneField3, playerOneField4, playerOneField5, playerTwoField1, playerTwoField2, playerTwoField3, playerTwoField4, playerTwoField5)
         println("Player 2! Choose your field:\nx: ")
-        var playerTwoInput = readLine()
+        playerTwoInput = readlnOrNull()
         println("y: ")
-        var playerTwoInput2 = readLine()
-        if(playerTwoInput != null && playerTwoInput2 != null) {
+        playerTwoInput1 = readlnOrNull()
+        if(playerTwoInput != null && playerTwoInput1 != null) {
             when(playerOneCounter){
-                0 -> playerTwoField1 = Point(playerTwoInput.toInt(),playerTwoInput2.toInt())
-                1 -> playerTwoField2 = Point(playerTwoInput.toInt(),playerTwoInput2.toInt())
-                2 -> playerTwoField3 = Point(playerTwoInput.toInt(),playerTwoInput2.toInt())
-                3 -> playerTwoField4 = Point(playerTwoInput.toInt(),playerTwoInput2.toInt())
-                4 -> playerTwoField5 = Point(playerTwoInput.toInt(),playerTwoInput2.toInt())
+                0 -> playerTwoField1 = Point(playerTwoInput.toInt(),playerTwoInput1.toInt())
+                1 -> playerTwoField2 = Point(playerTwoInput.toInt(),playerTwoInput1.toInt())
+                2 -> playerTwoField3 = Point(playerTwoInput.toInt(),playerTwoInput1.toInt())
+                3 -> playerTwoField4 = Point(playerTwoInput.toInt(),playerTwoInput1.toInt())
+                4 -> playerTwoField5 = Point(playerTwoInput.toInt(),playerTwoInput1.toInt())
                 else -> {
                     print("ERR: To many moves.")
                 }
